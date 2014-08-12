@@ -1,27 +1,34 @@
----
-layout: nil
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[{{ site.title }}]]></title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <title><![CDATA[Kingslayer's Blog]]></title>
+  <link href="http://540369718.github.io/atom.xml" rel="self"/>
+  <link href="http://540369718.github.io/"/>
+  <updated>2014-08-12T00:58:37+08:00</updated>
+  <id>http://540369718.github.io/</id>
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name><![CDATA[Kingslayer]]></name>
+    
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  {% for post in site.posts limit: 20 %}
+  
   <entry>
-    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+    <title type="html"><![CDATA[WIN下的GitHub]]></title>
+    <link href="http://540369718.github.io/blog/2014/08/12/di-yi-pian/"/>
+    <updated>2014-08-12T08:33:03+08:00</updated>
+    <id>http://540369718.github.io/blog/2014/08/12/di-yi-pian</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>A list item with a blockquote:</p>
+
+<blockquote><p>This is a blockquote
+inside a list item.<a href="http://google.com/" title="Google">Google</a>: <a href="http://google.com/">http://google.com/</a></p></blockquote></li>
+</ul>
+
+
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
+<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+]]></content>
   </entry>
-  {% endfor %}
+  
 </feed>
