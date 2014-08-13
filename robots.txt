@@ -1,4 +1,7 @@
+---
+layout: nil
+---
 User-agent: *
 Disallow: 
 
-Sitemap: http://Kingslayers.github.io/sitemap.xml 
+Sitemap: {{ site.url }}/sitemap.xml 

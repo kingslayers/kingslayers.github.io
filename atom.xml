@@ -1,43 +1,27 @@
+---
+layout: nil
+---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Kingslayer's Blog]]></title>
-  <link href="http://Kingslayers.github.io/atom.xml" rel="self"/>
-  <link href="http://Kingslayers.github.io/"/>
-  <updated>2014-08-13T15:19:39+08:00</updated>
-  <id>http://Kingslayers.github.io/</id>
+  <title><![CDATA[{{ site.title }}]]></title>
+  <link href="{{ site.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
   <author>
-    <name><![CDATA[Kingslayer]]></name>
-    
+    <name><![CDATA[{{ site.author | strip_html }}]]></name>
+    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
+  {% for post in site.posts limit: 20 %}
   <entry>
-    <title type="html"><![CDATA[WIN下的GitHub]]></title>
-    <link href="http://Kingslayers.github.io/blog/2014/08/12/di-yi-pian/"/>
-    <updated>2014-08-12T08:33:03+08:00</updated>
-    <id>http://Kingslayers.github.io/blog/2014/08/12/di-yi-pian</id>
-    <content type="html"><![CDATA[<h2>建立win下GitHub Pages的个人网页的过程记录：</h2>
-
-<blockquote><h3>一、下载安装必要软件</h3>
-
-<ol>
-<li>先从<a href="http://octopress.org">Octopress官方首页</a>下载<em>Octopress</em>博客模板</li>
-<li>再从<a href="http://rubyinstaller.org/downloads/">Ruby</a>下载<em>RubyInstallers</em>和<em>DEVELOPMENT KIT</em><br/>
- 这里要注意2点：
-
-<ol type="a">
-<li><em>RubyInstallers</em>和<em>DEVELOPMENT KIT</em>要注意版本及64位与32位的匹配</li>
-<li><em>DEVELOPMENT KIT</em>需要用<a href="http://sparanoid.com/lab/7z/">7Z</a>进行解压</li>
-</ol>
-</li>
-<li>安装<em>RubyInstallers</em>时候<br/>
-<img src="http://Kingslayers.github.io/images/MyImages/octopress_01.bmp" title="haha" ></li>
-<li>假设把<em>DEVELOPMENT KIT</em>解压到了 <code>D:\DevKit</code></li>
-</ol>
-</blockquote>
-]]></content>
+    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ post.id }}</id>
+    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
   </entry>
-  
+  {% endfor %}
 </feed>
