@@ -13,7 +13,7 @@ categories:
 	a. *RubyInstallers*和*DEVELOPMENT KIT*要注意版本及64位与32位的匹配  
 	b. *DEVELOPMENT KIT*需要用[7Z][3]进行解压
 3. 安装_RubyInstallers_时候  
-   {% img /images/MyImages/octopress_01.jpg RubyInstallers%}
+   
 4.  假设把*DEVELOPMENT KIT*解压到了 `D:\DevKit `
 >###二、 配置软件
 5.  启动*Ruby*的命令行窗口，用CD命令进入`D:\DevKit `，执行下面的2条命令
