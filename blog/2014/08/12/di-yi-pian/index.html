@@ -1,0 +1,203 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WIN下的GitHub - My Octopress Blog</title>
+	<meta name="author" content="Your Name">
+
+	
+	<meta name="description" content="建立win下GitHub Pages的个人网页的过程记录： 一、 下载安装必要软件 先从Octopress官方首页下载Octopress博客模板
+再从Ruby下载RubyInstallers和DEVELOPMENT KIT 这里要注意2点： RubyInstallers和DEVELOPMENT &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">My Octopress Blog</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="https://www.google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:yoursite.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="https://www.google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:yoursite.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">WIN下的GitHub</h2>
+	<div class="entry-content"><h2>建立win下GitHub Pages的个人网页的过程记录：</h2>
+
+<blockquote><h3>一、 下载安装必要软件</h3>
+
+<ol>
+<li>先从<a href="http://octopress.org">Octopress官方首页</a>下载<em>Octopress</em>博客模板</li>
+<li>再从<a href="http://rubyinstaller.org/downloads/">Ruby</a>下载<em>RubyInstallers</em>和<em>DEVELOPMENT KIT</em><br/>
+ 这里要注意2点：
+
+<ol type="a">
+<li><em>RubyInstallers</em>和<em>DEVELOPMENT KIT</em>要注意版本及64位与32位的匹配</li>
+<li><em>DEVELOPMENT KIT</em>需要用<a href="http://sparanoid.com/lab/7z/">7Z</a>进行解压</li>
+</ol>
+</li>
+<li>安装<em>RubyInstallers</em>时候</li>
+<li>假设把<em>DEVELOPMENT KIT</em>解压到了 <code>D:\DevKit</code>
+
+<h3>二、 配置软件</h3></li>
+<li><p>启动<em>Ruby</em>的命令行窗口，用CD命令进入<code>D:\DevKit</code>，执行下面的2条命令</p>
+
+<pre><code>ruby dk.rb init
+ruby dk.rb install
+</code></pre></li>
+<li><p>然后执行下面的3条命令用来更换软件更新的源</p>
+
+<pre><code> gem sources -a http://ruby.taobao.org/
+ gem sources -r http://rubygems.org/
+ gem sources -l
+</code></pre></li>
+<li><p>再用<a href="http://www.notepad-plus-plus.org/">Notepad++</a>打开<code>D:\Blog\Gemfile</code>把第一行的地址换成</p>
+
+<pre><code> http://ruby.taobao.org/
+</code></pre></li>
+<li><p>然后用CD命令进入<code>D:\Blog</code>安装<em>Octopress</em>的目录，运行下面的2条命令，安装<em>bundler</em></p>
+
+<pre><code> gem install bundler
+ bundle install
+</code></pre></li>
+<li><p>安装<em>Octopress</em>的默认主题</p>
+
+<pre><code> rake install
+</code></pre></li>
+<li><p>最后是生成页面和预览 预览页面（<a href="http://localhost:4000/">http://localhost:4000/</a>）</p>
+
+<pre><code>rake generate
+rake preview
+</code></pre>
+
+到次为止，<em>Octopress</em>的本地安装就算是完成了。
+
+<h3>三、 上传到GitHub</h3></li>
+<li>下载<a href="https://windows.github.com/">GitHub for Windows</a>并安装，假设是<code>D:\GitHub</code></li>
+<li>登陆GitHub后可以在选项内更改本地仓库的位置，同步到本地仓库里来</li>
+<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\source</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
+<li>在<em>GitHub</em>的客户端上填写一下变更理由（随便写）然后点击右上角的Sync就会自动帮你把代码同步到网上。</li>
+<li>这个时候，打开浏览器输入YourName.github.io就可以看到你的Blog啦
+
+<h3>四、 主题的更换</h3></li>
+<li>默认的主题打开页面的速度会特别的慢，据网上一些人说是有一些资源的地址被挡在了<em>伟大的墙</em>的外面</li>
+<li><p>这里推荐<a href="http://tommy351.github.io/Octopress-Theme-Slash/index_tw.html">Slash</a>,感觉界面很美观,执行下面的命令就可以安装</p>
+
+<p> cd D:\Blog<br/>
+ git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash<br/>
+ rake install[&lsquo;slash&rsquo;]<br/>
+ rake generate</p></li>
+</ol>
+</blockquote>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-12T08:33:03+08:00" pubdate data-updated="true"></time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		<a class="addthis_button_tweet"></a>
+		
+		
+		
+	</div>
+	
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Your Name
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>
