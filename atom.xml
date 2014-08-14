@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[King Slayer 's Blog]]></title>
-  <link href="http://http://kingslayers.github.io/atom.xml" rel="self"/>
-  <link href="http://http://kingslayers.github.io/"/>
-  <updated>2014-08-14T21:31:15+08:00</updated>
-  <id>http://http://kingslayers.github.io/</id>
+  <link href="http://kingslayers.github.io/atom.xml" rel="self"/>
+  <link href="http://kingslayers.github.io/"/>
+  <updated>2014-08-14T23:30:25+08:00</updated>
+  <id>http://kingslayers.github.io/</id>
   <author>
     <name><![CDATA[小生cai麻小烫]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[WIN下的GitHub]]></title>
-    <link href="http://http://kingslayers.github.io/blog/2014/08/12/di-yi-pian/"/>
+    <link href="http://kingslayers.github.io/blog/2014/08/12/di-yi-pian/"/>
     <updated>2014-08-12T08:33:03+08:00</updated>
-    <id>http://http://kingslayers.github.io/blog/2014/08/12/di-yi-pian</id>
+    <id>http://kingslayers.github.io/blog/2014/08/12/di-yi-pian</id>
     <content type="html"><![CDATA[<h2>建立win下GitHub Pages的个人网页的过程记录：</h2>
 
 <blockquote><h3>一、 下载安装必要软件</h3>
@@ -33,7 +33,7 @@
 </ol>
 </li>
 <li>安装<em>RubyInstallers</em>时候<br/>
-<img src="http://http://kingslayers.github.io/images/MyPic/1-1.jpg" alt="" /></li>
+<img src="http://kingslayers.github.io/images/MyPic/1-1.jpg" alt="" /></li>
 <li>假设把<em>DEVELOPMENT KIT</em>解压到了 <code>D:\DevKit</code>
 
 <h3>二、 配置软件</h3></li>

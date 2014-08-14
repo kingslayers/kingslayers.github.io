@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://http://kingslayers.github.io/sitemap.xml 
+Sitemap: http://kingslayers.github.io/sitemap.xml 
