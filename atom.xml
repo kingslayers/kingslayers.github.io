@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2014-08-14T20:55:39+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[King Slayer 's Blog]]></title>
+  <link href="http://http://kingslayers.github.io/atom.xml" rel="self"/>
+  <link href="http://http://kingslayers.github.io/"/>
+  <updated>2014-08-14T21:31:15+08:00</updated>
+  <id>http://http://kingslayers.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[小生cai麻小烫]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[WIN下的GitHub]]></title>
-    <link href="http://yoursite.com/blog/2014/08/12/di-yi-pian/"/>
+    <link href="http://http://kingslayers.github.io/blog/2014/08/12/di-yi-pian/"/>
     <updated>2014-08-12T08:33:03+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/12/di-yi-pian</id>
+    <id>http://http://kingslayers.github.io/blog/2014/08/12/di-yi-pian</id>
     <content type="html"><![CDATA[<h2>建立win下GitHub Pages的个人网页的过程记录：</h2>
 
 <blockquote><h3>一、 下载安装必要软件</h3>
@@ -32,7 +32,8 @@
 <li><em>DEVELOPMENT KIT</em>需要用<a href="http://sparanoid.com/lab/7z/">7Z</a>进行解压</li>
 </ol>
 </li>
-<li>安装<em>RubyInstallers</em>时候</li>
+<li>安装<em>RubyInstallers</em>时候<br/>
+<img src="http://http://kingslayers.github.io/images/MyPic/1-1.jpg" alt="" /></li>
 <li>假设把<em>DEVELOPMENT KIT</em>解压到了 <code>D:\DevKit</code>
 
 <h3>二、 配置软件</h3></li>
@@ -71,7 +72,7 @@ rake preview
 <h3>三、 上传到GitHub</h3></li>
 <li>下载<a href="https://windows.github.com/">GitHub for Windows</a>并安装，假设是<code>D:\GitHub</code></li>
 <li>登陆GitHub后可以在选项内更改本地仓库的位置，同步到本地仓库里来</li>
-<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\source</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
+<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\public</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
 <li>在<em>GitHub</em>的客户端上填写一下变更理由（随便写）然后点击右上角的Sync就会自动帮你把代码同步到网上。</li>
 <li>这个时候，打开浏览器输入YourName.github.io就可以看到你的Blog啦
 
