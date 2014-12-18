@@ -7,8 +7,7 @@
 	<meta name="author" content="小生cai麻小烫">
 
 	
-	<meta name="description" content="建立win下GitHub Pages的个人网页的过程记录： 一、 下载安装必要软件 先从Octopress官方首页下载Octopress博客模板
-再从Ruby下载RubyInstallers和DEVELOPMENT KIT 这里要注意2点： RubyInstallers和DEVELOPMENT &hellip;">
+	<meta name="description" content="雷神之锤3中神奇的数字 float InvSqrt(float x){ float xhalf = 0.5f*x; int i = *(int*)&amp;x; // get bits for floating VALUE i = 0x5f375a86- (i&gt;&gt;1); // &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +79,58 @@
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/12/18/di-er-pian/">
+		
+			雷神之锤3中神奇的数字</a>
+	</h2>
+	<div class="entry-content">
+		<h1>雷神之锤3中神奇的数字</h1>
+
+<pre><code>float InvSqrt(float x){
+    float xhalf = 0.5f*x;
+    int i = *(int*)&amp;x; // get bits for floating VALUE
+    i = 0x5f375a86- (i&gt;&gt;1); // gives initial guess y0
+    x = *(float*)&amp;i; // convert bits BACK to float
+    x = x*(1.5f-xhalf*x*x); // Newton step, repeating increases accuracy
+    return x;
+}
+</code></pre>
+
+<h6>调用这个函数，最终输出的是1/sqrt(x),效率非常之高，<a href="http://octopress.org">原文地址</a></h6>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-18T08:33:03+08:00" pubdate data-updated="true"></time></div>
+	<div class="tags">
+
+</div>
+	
+	
+          <div class="comments"><a href="/blog/2014/12/18/di-er-pian/#comments">Comments</a>
+         
+</div>
+</article>
 
 
     <article class="post">
@@ -179,6 +230,10 @@ rake preview
 
 <time datetime="2014-08-12T08:33:03+08:00" pubdate data-updated="true"></time></div>
 	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/octopress/'>octopress</a>
+
 
 </div>
 	

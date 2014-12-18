@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://kingslayers.github.io/blog/2014/12/18/di-er-pian/</loc>
+    <lastmod>2014-12-18T08:33:03+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://kingslayers.github.io/blog/2014/08/12/di-yi-pian/</loc>
     <lastmod>2014-08-12T08:33:03+08:00</lastmod>
     <priority>0.8</priority>
@@ -11,14 +17,14 @@
   
   <url>
     <loc>http://kingslayers.github.io/blog/archives/</loc>
-    <lastmod>2014-08-15T11:42:19+08:00</lastmod>
+    <lastmod>2014-12-18T11:44:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://kingslayers.github.io/</loc>
-    <lastmod>2014-08-15T11:42:19+08:00</lastmod>
+    <lastmod>2014-12-18T11:44:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
