@@ -4,7 +4,7 @@
   <title><![CDATA[King Slayer 's Blog]]></title>
   <link href="http://kingslayers.github.io/atom.xml" rel="self"/>
   <link href="http://kingslayers.github.io/"/>
-  <updated>2014-12-18T11:44:35+08:00</updated>
+  <updated>2014-12-18T11:53:46+08:00</updated>
   <id>http://kingslayers.github.io/</id>
   <author>
     <name><![CDATA[小生cai麻小烫]]></name>
@@ -53,8 +53,7 @@
 <li><em>DEVELOPMENT KIT</em>需要用<a href="http://sparanoid.com/lab/7z/">7Z</a>进行解压</li>
 </ol>
 </li>
-<li>安装<em>RubyInstallers</em>时候<br/>
-<img src="http://kingslayers.github.io/images/MyPic/1-1.jpg" alt="" /></li>
+<li>安装<em>RubyInstallers</em>时候</li>
 <li>假设把<em>DEVELOPMENT KIT</em>解压到了 <code>D:\DevKit</code>
 
 <h3>二、 配置软件</h3></li>
@@ -93,7 +92,7 @@ rake preview
 <h3>三、 上传到GitHub</h3></li>
 <li>下载<a href="https://windows.github.com/">GitHub for Windows</a>并安装，假设是<code>D:\GitHub</code></li>
 <li>登陆GitHub后可以在选项内更改本地仓库的位置，同步到本地仓库里来</li>
-<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\public</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
+<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\source</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
 <li>在<em>GitHub</em>的客户端上填写一下变更理由（随便写）然后点击右上角的Sync就会自动帮你把代码同步到网上。</li>
 <li>这个时候，打开浏览器输入YourName.github.io就可以看到你的Blog啦
 
@@ -104,7 +103,18 @@ rake preview
 <p> cd D:\Blog<br/>
  git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash<br/>
  rake install[&lsquo;slash&rsquo;]<br/>
- rake generate</p></li>
+ rake generate</p>
+
+<h3>五、 添加文章</h3></li>
+<li>先新建一个Markdown的文件，编辑这个文件的内容，最终就是要发布到GitHub上的</li>
+<li>然后把这个文件移动到<code>D:\Blog\source\_posts</code></li>
+<li><p>启动<em>Ruby</em>的命令行窗口，用CD命令进入<code>D:\Blog</code>，执行下面的2条命令，<a href="http://localhost:4000/">预览点这里</a></p>
+
+<p> rake generate<br/>
+ rake preview(可有可无，只是为了预览一下)</p></li>
+<li>将刚刚<code>rake generate</code>之后生成的<code>D:\Blog\source</code>下所有文件都<em>COPY</em>到<code>D:\GitHub\YourName.github.io</code>下</li>
+<li>在<em>GitHub</em>的客户端上填写一下变更理由（随便写）然后点击右上角的Sync就会自动帮你把代码同步到网上。</li>
+<li>这个时候，打开浏览器输入YourName.github.io就可以看到你的Blog啦</li>
 </ol>
 </blockquote>
 ]]></content>
