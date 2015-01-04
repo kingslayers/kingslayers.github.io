@@ -36,14 +36,14 @@ function drawBeauty(beauty){
 	ans_array[8] = put(block_width*2,block_height*2);
 	
 	pic_array[0] = put(0,0);
-	pic_array[1] = put(block_width,0);
-	pic_array[2] = put(block_width*2,0);
+	pic_array[2] = put(block_width,0);
+	pic_array[1] = put(block_width*2,0);
 	pic_array[3] = put(0,block_height);
-	pic_array[4] = put(block_width,block_height);
-	pic_array[5] = put(block_width*2,block_height);
-	pic_array[6] = put(0,block_height*2);
+	pic_array[8] = put(block_width,block_height);
+	pic_array[6] = put(block_width*2,block_height);
+	pic_array[5] = put(0,block_height*2);
 	pic_array[7] = put(block_width,block_height*2);
-	pic_array[8] = put(block_width*2,block_height*2);
+	pic_array[4] = put(block_width*2,block_height*2);
 	var x1 = span_width;
 	var x2 = x1+block_width;
 	var x3 = x2+block_width;
