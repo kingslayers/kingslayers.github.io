@@ -8,6 +8,7 @@ var pic_name = "r_test01"; //图片的名字
 var pic_array = new Array();
 var ans_array = new Array();
 var change_array = new Array();
+var ctx_array = new Array();
 var beauty;
 var myctx;
 var steps_sum = 0;
@@ -21,9 +22,9 @@ function drawBeauty(beauty){
 	block_width = pic_width + span_width;
 	block_height = pic_height + span_height;
 	//设置画布的高和宽
-	canvas.height = 3*block_height - span_height;
-    canvas.width = 3*block_width - span_width;
-	//图像的x,y,宽,高，目标地址的x,y,宽,高	
+	canvas.height = 3*block_height + span_height;
+    canvas.width = 3*block_width + span_width;
+	
 	ans_array[0] = put(0,0);
 	ans_array[1] = put(block_width,0);
 	ans_array[2] = put(block_width*2,0);
@@ -43,8 +44,44 @@ function drawBeauty(beauty){
 	pic_array[6] = put(0,block_height*2);
 	pic_array[7] = put(block_width,block_height*2);
 	pic_array[8] = put(block_width*2,block_height*2);
+	var x1 = span_width;
+	var x2 = x1+block_width;
+	var x3 = x2+block_width;
+	var y = span_height;
+	ctx_array[0] = put(x1,y);
+	ctx_array[1] = put(x2,y);
+	ctx_array[2] = put(x3,y);
+	y += block_height;
+	ctx_array[3] = put(x1,y);
+	ctx_array[4] = put(x2,y);
+	ctx_array[5] = put(x3,y);
+	y += block_height;
+	ctx_array[6] = put(x1,y);
+	ctx_array[7] = put(x2,y);
+	ctx_array[8] = put(x3,y);
 	drawPic();	
 }
+function drawLine(k){
+	myctx.lineWidth = 5; 
+	myctx.strokeStyle = 'rgba(96,203,63,1)'; 
+	var start_x = ctx_array[k].x;
+	var start_y = ctx_array[k].y;
+	var length_x = pic_width;
+	var length_y = pic_height;
+	myctx.beginPath();
+	myctx.moveTo(start_x,start_y);   
+	myctx.lineTo(start_x,start_y+length_y);
+	myctx.moveTo(start_x,start_y);   
+	myctx.lineTo(start_x+length_x,start_y);
+	start_x = start_x+length_x;
+	start_y = start_y+length_y;
+	myctx.moveTo(start_x,start_y);   
+	myctx.lineTo(start_x-length_x,start_y);
+	myctx.moveTo(start_x,start_y);   
+	myctx.lineTo(start_x,start_y-length_y);
+	myctx.stroke();   
+}
+
 function change(x,y){	
 	var tmp_x = pic_array[x].x;
 	var tmp_y = pic_array[x].y;
@@ -55,19 +92,20 @@ function change(x,y){
 	drawPic();
 }
 function drawPic(){
+	//图像的x,y,宽,高，目标地址的x,y,宽,高	
 	//把9张切图画出来
-	//上面三个
-	myctx.drawImage(beauty,pic_array[0].x,pic_array[0].y,pic_width,pic_height,0,0,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[1].x,pic_array[1].y,pic_width,pic_height,block_width,0,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[2].x,pic_array[2].y,pic_width,pic_height,block_width*2,0,pic_width,pic_height);
+	//上面三个	
+	myctx.drawImage(beauty,pic_array[0].x,pic_array[0].y,pic_width,pic_height, ctx_array[0].x,ctx_array[0].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[1].x,pic_array[1].y,pic_width,pic_height, ctx_array[1].x,ctx_array[1].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[2].x,pic_array[2].y,pic_width,pic_height, ctx_array[2].x,ctx_array[2].y,pic_width,pic_height);
 	//中间三个
-	myctx.drawImage(beauty,pic_array[3].x,pic_array[3].y,pic_width,pic_height,0,block_height,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[4].x,pic_array[4].y,pic_width,pic_height,block_width,block_height,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[5].x,pic_array[5].y,pic_width,pic_height,block_width*2,block_height,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[3].x,pic_array[3].y,pic_width,pic_height, ctx_array[3].x,ctx_array[3].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[4].x,pic_array[4].y,pic_width,pic_height, ctx_array[4].x,ctx_array[4].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[5].x,pic_array[5].y,pic_width,pic_height, ctx_array[5].x,ctx_array[5].y,pic_width,pic_height);
 	//下面三个
-	myctx.drawImage(beauty,pic_array[6].x,pic_array[6].y,pic_width,pic_height,0,block_height*2,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[7].x,pic_array[7].y,pic_width,pic_height,block_width,block_height*2,pic_width,pic_height);
-	myctx.drawImage(beauty,pic_array[8].x,pic_array[8].y,pic_width,pic_height,block_width*2,block_height*2,pic_width,pic_height);	
+	myctx.drawImage(beauty,pic_array[6].x,pic_array[6].y,pic_width,pic_height, ctx_array[6].x,ctx_array[6].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[7].x,pic_array[7].y,pic_width,pic_height, ctx_array[7].x,ctx_array[7].y,pic_width,pic_height);
+	myctx.drawImage(beauty,pic_array[8].x,pic_array[8].y,pic_width,pic_height, ctx_array[8].x,ctx_array[8].y,pic_width,pic_height);	
 }
 function load(){
 	mycv = document.getElementById("canvas");
@@ -96,15 +134,23 @@ function load(){
 					change_array[0] = 0;
 					change_array[2] = number;
 					steps_sum += 1;
+					myctx.clearRect(0, 0,canvas.width,canvas.height);//全部擦除
 					change(change_array[1],change_array[2]);	
 					if (finish()){
 						//游戏结束
 						alert("游戏结束用了"+steps_sum+"步");
 					}
 				}
+				//再次点击相同的块，取消选中
+				if (change_array[1] == number){
+					change_array[0] = 0;
+					myctx.clearRect(0, 0,canvas.width,canvas.height);//全部擦除
+					drawPic();	
+				}
 			}else{
 				change_array[0] = 1;
 				change_array[1] = number;
+				drawLine(number);
 			}			
 	}, false);
 }
